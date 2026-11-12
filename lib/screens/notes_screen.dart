@@ -1,4 +1,5 @@
 
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -101,6 +102,8 @@ class NotesScreen extends StatelessWidget {
                 result['body'] ?? '',
               );
             } catch (e) {
+              if (!context.mounted) return;
+
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text(e.toString())),
               );
