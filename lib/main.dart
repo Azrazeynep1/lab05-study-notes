@@ -59,7 +59,7 @@ class AuthGate extends StatefulWidget {
 }
 
 class _AuthGateState extends State<AuthGate> {
-  late final Stream<User?> _user = context.read<AuthRepository>().authStateChanges();
+  late final Stream<User?> _user = context.read<AuthRepository>().authStateChanges;
 
   @override
   void initState() {
